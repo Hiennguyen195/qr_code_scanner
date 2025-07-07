@@ -11,7 +11,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:8.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
     }
 }
 
@@ -27,15 +26,8 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdk 33
-    
-    namespace 'com.example.qr_code_scanner'
-
-    compileOptions {
-        coreLibraryDesugaringEnabled true
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    namespace = "com.example.qr_code_scanner"
     }
-
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -68,5 +60,4 @@ dependencies {
     implementation('com.journeyapps:zxing-android-embedded:4.3.0') { transitive = false }
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.zxing:core:3.5.2'
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
 }
